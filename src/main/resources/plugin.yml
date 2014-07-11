@@ -1,0 +1,3 @@
+name: aslettemark-t2
+main: com.tenjava.entries.aslettemark.t2.TenJava
+version: '${project.version}'
