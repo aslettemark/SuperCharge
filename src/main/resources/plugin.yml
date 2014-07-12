@@ -1,3 +1,12 @@
 name: aslettemark-t2
 main: com.tenjava.entries.aslettemark.t2.TenJava
 version: '${project.version}'
+permissions:
+    supercharge.drop:
+        description: Allows the use of /drop
+        default: true
+commands:
+    drop:
+        description: Gain energy by dropping items
+        usage: /<command> help
+        permission: supercharge.drop
