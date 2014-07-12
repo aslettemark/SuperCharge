@@ -12,6 +12,7 @@ import com.tenjava.entries.aslettemark.t2.command.DropCommand;
 import com.tenjava.entries.aslettemark.t2.command.EffectCommand;
 import com.tenjava.entries.aslettemark.t2.command.ListEffectsCommand;
 import com.tenjava.entries.aslettemark.t2.event.DropListener;
+import com.tenjava.entries.aslettemark.t2.event.EffectListener;
 import com.tenjava.entries.aslettemark.t2.event.JoinQuitListener;
 
 public class TenJava extends JavaPlugin {
@@ -31,6 +32,7 @@ public class TenJava extends JavaPlugin {
         this.saveDefaultConfig();
         this.getServer().getPluginManager().registerEvents(new DropListener(this), this);
         this.getServer().getPluginManager().registerEvents(new JoinQuitListener(this), this);
+        this.getServer().getPluginManager().registerEvents(new EffectListener(this), this);
         this.getCommand("drop").setExecutor(new DropCommand(this));
         this.getCommand("effect").setExecutor(new EffectCommand(this));
         this.getCommand("listeffects").setExecutor(new ListEffectsCommand(this));
