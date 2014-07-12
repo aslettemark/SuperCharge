@@ -1,6 +1,10 @@
+keep-config: true
 effects: 
     - alchemy
     - lightning
+cost:
+    alchemy: 1000
+    lightning: 30
 materials:
     coal: 8
     iron_ingot: 10

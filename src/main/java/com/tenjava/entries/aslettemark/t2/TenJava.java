@@ -28,9 +28,9 @@ public class TenJava extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        this.saveDefaultConfig();
         log.info("Hi.");
         loadMaterials();
-        this.saveDefaultConfig();
         this.getServer().getPluginManager().registerEvents(new DropListener(this), this);
         this.getServer().getPluginManager().registerEvents(new JoinQuitListener(this), this);
         this.getServer().getPluginManager().registerEvents(new EffectListener(this), this);
@@ -40,7 +40,7 @@ public class TenJava extends JavaPlugin {
 
         String enabled = "Enabled effects: ";
         for (String s : this.getConfig().getStringList("effects")) {
-            enabledEffects.put(s, 30); //TODO custom cost
+            enabledEffects.put(s, this.getConfig().getInt("cost." + s));
             enabled = enabled + s + ", ";
         }
         log.info(enabled.substring(0, enabled.length() - 2));
@@ -49,27 +49,34 @@ public class TenJava extends JavaPlugin {
     @Override
     public void onDisable() {
         log.info("Goodbye.");
+        this.saveConfig();
     }
 
     private void loadMaterials() {
         FileConfiguration c = this.getConfig();
         String mat = "materials.";
         materials.put(Material.COAL, c.getInt(mat + "coal"));
-        materials.put(Material.IRON_INGOT, c.getInt(mat+"iron_ingot"));
-        materials.put(Material.IRON_ORE, c.getInt(mat+"iron_ore"));
-        materials.put(Material.GOLD_ORE, c.getInt(mat+"gold_ore"));
-        materials.put(Material.GOLD_INGOT, c.getInt(mat+"gold_ingot"));
-        materials.put(Material.GOLD_BLOCK, c.getInt(mat+"gold_block"));
-        materials.put(Material.IRON_BLOCK, c.getInt(mat+"iron_block"));
-        materials.put(Material.DIAMOND, c.getInt(mat+"diamond"));
-        materials.put(Material.DIAMOND_BLOCK, c.getInt(mat+"diamond_block"));
-        materials.put(Material.REDSTONE, c.getInt(mat+"redstone"));
-        materials.put(Material.LAPIS_ORE, c.getInt(mat+"lapis_ore"));
-        materials.put(Material.LAPIS_BLOCK, c.getInt(mat+"lapis_block"));
+        materials.put(Material.IRON_INGOT, c.getInt(mat + "iron_ingot"));
+        materials.put(Material.IRON_ORE, c.getInt(mat + "iron_ore"));
+        materials.put(Material.GOLD_ORE, c.getInt(mat + "gold_ore"));
+        materials.put(Material.GOLD_INGOT, c.getInt(mat + "gold_ingot"));
+        materials.put(Material.GOLD_BLOCK, c.getInt(mat + "gold_block"));
+        materials.put(Material.IRON_BLOCK, c.getInt(mat + "iron_block"));
+        materials.put(Material.DIAMOND, c.getInt(mat + "diamond"));
+        materials.put(Material.DIAMOND_BLOCK, c.getInt(mat + "diamond_block"));
+        materials.put(Material.REDSTONE, c.getInt(mat + "redstone"));
+        materials.put(Material.LAPIS_ORE, c.getInt(mat + "lapis_ore"));
+        materials.put(Material.LAPIS_BLOCK, c.getInt(mat + "lapis_block"));
     }
 
     public boolean effectEnabled(String e) {
         return this.enabledEffects.containsKey(e);
+    }
+
+    public void setEnergy(Player player, int energy) {
+        this.getConfig().set("players." + player.getName(), energy);
+        this.energylevels.put(player, energy);
+        this.saveConfig();
     }
 
 }

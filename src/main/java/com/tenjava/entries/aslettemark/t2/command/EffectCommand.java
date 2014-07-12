@@ -51,16 +51,16 @@ public class EffectCommand implements CommandExecutor {
             if (plugin.energylevels.get(player) >= amount * (plugin.enabledEffects.get(args[0]))) {
                 plugin.playerEffects.put(player, args[0]);
                 plugin.usageLeft.put(player, amount);
-                plugin.energylevels.put(player, plugin.energylevels.get(player) - (plugin.enabledEffects.get(args[0])) * amount);
+                plugin.setEnergy(player, plugin.energylevels.get(player) - (plugin.enabledEffects.get(args[0])) * amount);
                 player.sendMessage(ChatColor.AQUA + args[0] + " acquired for " + amount * (plugin.enabledEffects.get(args[0])) + " energy points.");
                 player.sendMessage(ChatColor.AQUA + message);
                 sender.sendMessage(ChatColor.AQUA + "Please note that any unused effects are removed on disconnect");
             } else {
                 player.sendMessage(ChatColor.AQUA + "You don't have enough energy to do that!");
             }
-        } else if(plugin.effectEnabled(args[0]) && args[1].equalsIgnoreCase("info")) {
+        } else if (plugin.effectEnabled(args[0]) && args[1].equalsIgnoreCase("info")) {
             String m = "";
-            switch(args[0]) {
+            switch (args[0]) {
                 case "alchemy":
                     m = "Turns stone to gold. Cost: " + ChatColor.WHITE + plugin.enabledEffects.get(args[0]);
                     break;
@@ -72,7 +72,7 @@ public class EffectCommand implements CommandExecutor {
                     break;
             }
             player.sendMessage(ChatColor.AQUA + m);
-        } else if(args[0].equalsIgnoreCase("remove")) {
+        } else if (args[0].equalsIgnoreCase("remove")) {
             plugin.playerEffects.put(player, null);
             plugin.usageLeft.put(player, 0);
             player.sendMessage(ChatColor.GOLD + "All effects cleared.");

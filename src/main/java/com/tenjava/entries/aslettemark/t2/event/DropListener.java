@@ -22,6 +22,7 @@ public class DropListener implements Listener {
                 plugin.energylevels.put(event.getPlayer(), newlevel);
                 event.getItemDrop().remove();
                 event.getPlayer().sendMessage("Your new energy level is: " + newlevel);
+                this.plugin.setEnergy(event.getPlayer(), newlevel);
             }
         }
     }

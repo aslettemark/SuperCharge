@@ -27,7 +27,6 @@ public class EffectListener implements Listener {
                 if (plugin.playerEffects.get(player) != null) {
                     if (plugin.playerEffects.get(player).equalsIgnoreCase("alchemy")) {
                         event.getClickedBlock().setType(Material.GOLD_BLOCK);
-                        plugin.usageLeft.put(player, plugin.usageLeft.get(player) - 1);
                         this.updateUsage(player, 1);
                         return;
                     }
@@ -35,32 +34,32 @@ public class EffectListener implements Listener {
             }
         }
         if (player.getItemInHand().getType() == Material.STICK) {
-            if(plugin.playerEffects.get(player) != null) {
+            if (plugin.playerEffects.get(player) != null) {
                 if (plugin.playerEffects.get(player).equalsIgnoreCase("lightning")) {
                     int x = event.getPlayer().getLocation().getBlockX();
                     int y = event.getPlayer().getLocation().getBlockY();
                     int z = event.getPlayer().getLocation().getBlockZ();
                     World w = player.getWorld();
-                    
-                    w.strikeLightning(new Location(w, x+3, y, z));
-                    w.strikeLightning(new Location(w, x+3, y, z+1));
-                    w.strikeLightning(new Location(w, x+3, y, z-1));
-                    w.strikeLightning(new Location(w, x-3, y, z));
-                    w.strikeLightning(new Location(w, x-3, y, z+1));
-                    w.strikeLightning(new Location(w, x-3, y, z-1));
-                    w.strikeLightning(new Location(w, x, y, z+3));
-                    w.strikeLightning(new Location(w, x+1, y, z+3));
-                    w.strikeLightning(new Location(w, x-1, y, z+3));
-                    w.strikeLightning(new Location(w, x, y, z-3));
-                    w.strikeLightning(new Location(w, x+1, y, z-3));
-                    w.strikeLightning(new Location(w, x-1, y, z-3));
-                    
+
+                    w.strikeLightning(new Location(w, x + 3, y, z));
+                    w.strikeLightning(new Location(w, x + 3, y, z + 1));
+                    w.strikeLightning(new Location(w, x + 3, y, z - 1));
+                    w.strikeLightning(new Location(w, x - 3, y, z));
+                    w.strikeLightning(new Location(w, x - 3, y, z + 1));
+                    w.strikeLightning(new Location(w, x - 3, y, z - 1));
+                    w.strikeLightning(new Location(w, x, y, z + 3));
+                    w.strikeLightning(new Location(w, x + 1, y, z + 3));
+                    w.strikeLightning(new Location(w, x - 1, y, z + 3));
+                    w.strikeLightning(new Location(w, x, y, z - 3));
+                    w.strikeLightning(new Location(w, x + 1, y, z - 3));
+                    w.strikeLightning(new Location(w, x - 1, y, z - 3));
+
                     this.updateUsage(player, 1);
                 }
             }
         }
     }
-    
+
     private void updateUsage(Player player, int use) {
         plugin.usageLeft.put(player, plugin.usageLeft.get(player) - use);
         if (plugin.usageLeft.get(player) == 0) {
