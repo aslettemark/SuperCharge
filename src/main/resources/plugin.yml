@@ -5,8 +5,22 @@ permissions:
     supercharge.drop:
         description: Allows the use of /drop
         default: true
+    supercharge.effect:
+        description: Allows the use of /effect
+        default: true
+    supercharge.listeffects:
+        description: Allows the use of /listeffects
+        default: true
 commands:
     drop:
         description: Gain energy by dropping items
         usage: /<command> help
         permission: supercharge.drop
+    effect:
+        description: Activate or get info about an effect
+        usage: /<command> <effect|remove> <info|on> [amount/time]
+        permission: supercharge.effect
+    listeffects:
+        description: List available effects
+        usage: /<command>
+        permission: supercharge.listeffects
