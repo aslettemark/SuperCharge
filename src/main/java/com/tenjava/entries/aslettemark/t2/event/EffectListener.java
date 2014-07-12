@@ -43,17 +43,17 @@ public class EffectListener implements Listener {
                     World w = player.getWorld();
                     
                     w.strikeLightning(new Location(w, x+3, y, z));
-                    w.strikeLightning(new Location(w, x+3, y+1, z));
-                    w.strikeLightning(new Location(w, x+3, y-1, z));
+                    w.strikeLightning(new Location(w, x+3, y, z+1));
+                    w.strikeLightning(new Location(w, x+3, y, z-1));
                     w.strikeLightning(new Location(w, x-3, y, z));
-                    w.strikeLightning(new Location(w, x-3, y+1, z));
-                    w.strikeLightning(new Location(w, x-3, y-1, z));
-                    w.strikeLightning(new Location(w, x, y+3, z));
-                    w.strikeLightning(new Location(w, x+1, y+3, z));
-                    w.strikeLightning(new Location(w, x-1, y+3, z));
-                    w.strikeLightning(new Location(w, x, y-3, z));
-                    w.strikeLightning(new Location(w, x+1, y-3, z));
-                    w.strikeLightning(new Location(w, x-2, y-3, z));
+                    w.strikeLightning(new Location(w, x-3, y, z+1));
+                    w.strikeLightning(new Location(w, x-3, y, z-1));
+                    w.strikeLightning(new Location(w, x, y, z+3));
+                    w.strikeLightning(new Location(w, x+1, y, z+3));
+                    w.strikeLightning(new Location(w, x-1, y, z+3));
+                    w.strikeLightning(new Location(w, x, y, z-3));
+                    w.strikeLightning(new Location(w, x+1, y, z-3));
+                    w.strikeLightning(new Location(w, x-2, y, z-3));
                     
                     this.updateUsage(player, 1);
                 }
