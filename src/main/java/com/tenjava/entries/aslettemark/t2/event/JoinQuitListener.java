@@ -19,8 +19,10 @@ public class JoinQuitListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        plugin.energylevels.put(player, 0); //TODO: Load from file
+        plugin.energylevels.put(player, plugin.getConfig().getInt("players." + player.getName()));
         plugin.playerEffects.put(player, null);
+        plugin.droppers.remove(player);
+        plugin.usageLeft.put(player, 0);
     }
 
     @EventHandler

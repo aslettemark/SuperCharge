@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.logging.Logger;
 
 import org.bukkit.Material;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -51,9 +52,20 @@ public class TenJava extends JavaPlugin {
     }
 
     private void loadMaterials() {
-        materials.put(Material.COAL, 8);
-        materials.put(Material.IRON_INGOT, 10);
-        materials.put(Material.IRON_ORE, 8);
+        FileConfiguration c = this.getConfig();
+        String mat = "materials.";
+        materials.put(Material.COAL, c.getInt(mat + "coal"));
+        materials.put(Material.IRON_INGOT, c.getInt(mat+"iron_ingot"));
+        materials.put(Material.IRON_ORE, c.getInt(mat+"iron_ore"));
+        materials.put(Material.GOLD_ORE, c.getInt(mat+"gold_ore"));
+        materials.put(Material.GOLD_INGOT, c.getInt(mat+"gold_ingot"));
+        materials.put(Material.GOLD_BLOCK, c.getInt(mat+"gold_block"));
+        materials.put(Material.IRON_BLOCK, c.getInt(mat+"iron_block"));
+        materials.put(Material.DIAMOND, c.getInt(mat+"diamond"));
+        materials.put(Material.DIAMOND_BLOCK, c.getInt(mat+"diamond_block"));
+        materials.put(Material.REDSTONE, c.getInt(mat+"redstone"));
+        materials.put(Material.LAPIS_ORE, c.getInt(mat+"lapis_ore"));
+        materials.put(Material.LAPIS_BLOCK, c.getInt(mat+"lapis_block"));
     }
 
     public boolean effectEnabled(String e) {

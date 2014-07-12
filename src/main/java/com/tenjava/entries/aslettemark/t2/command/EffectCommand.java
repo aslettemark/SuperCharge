@@ -39,7 +39,7 @@ public class EffectCommand implements CommandExecutor {
                     break;
                 case "lightning":
                     amount = 1;
-                    message = "Right click with a stick to summon lightning.";
+                    message = "Right click with a stick to summon lightning. Use at own risk.";
                     break;
                 default:
                     player.sendMessage(ChatColor.AQUA + "There was an error");
@@ -59,9 +59,23 @@ public class EffectCommand implements CommandExecutor {
                 player.sendMessage(ChatColor.AQUA + "You don't have enough energy to do that!");
             }
         } else if(plugin.effectEnabled(args[0]) && args[1].equalsIgnoreCase("info")) {
-            //TODO send info
+            String m = "";
+            switch(args[0]) {
+                case "alchemy":
+                    m = "Turns stone to gold. Cost: " + ChatColor.WHITE + plugin.enabledEffects.get(args[0]);
+                    break;
+                case "lightning":
+                    m = "Makes you look like Thor. Possibly dangerous.";
+                    break;
+                default:
+                    m = "Info not available.";
+                    break;
+            }
+            player.sendMessage(ChatColor.AQUA + m);
         } else if(args[0].equalsIgnoreCase("remove")) {
-            //TODO remove effects
+            plugin.playerEffects.put(player, null);
+            plugin.usageLeft.put(player, 0);
+            player.sendMessage(ChatColor.GOLD + "All effects cleared.");
         } else {
             player.sendMessage(ChatColor.AQUA + "Effect unknown/not in use");
             sender.sendMessage(ChatColor.GOLD + "Usage: /" + label + " <effect|remove> <info|on> [amount/time]");

@@ -53,7 +53,7 @@ public class EffectListener implements Listener {
                     w.strikeLightning(new Location(w, x-1, y, z+3));
                     w.strikeLightning(new Location(w, x, y, z-3));
                     w.strikeLightning(new Location(w, x+1, y, z-3));
-                    w.strikeLightning(new Location(w, x-2, y, z-3));
+                    w.strikeLightning(new Location(w, x-1, y, z-3));
                     
                     this.updateUsage(player, 1);
                 }

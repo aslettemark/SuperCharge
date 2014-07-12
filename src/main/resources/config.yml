@@ -1,4 +1,19 @@
 effects: 
     - alchemy
     - lightning
-
+materials:
+    coal: 8
+    iron_ingot: 10
+    iron_ore: 8
+    gold_ore: 70
+    gold_ingot: 100
+    gold_block: 1000
+    iron_block: 100
+    diamond: 200
+    diamond_block: 2000
+    redstone: 4
+    lapis_ore: 25
+    lapis_block: 250
+players:
+    bob: 10
+    mbaxter: 13
