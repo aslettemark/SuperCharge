@@ -2,9 +2,11 @@ keep-config: true
 effects: 
     - alchemy
     - lightning
+    - bedteleport
 cost:
     alchemy: 1000
-    lightning: 30
+    lightning: 50
+    bedteleport: 200
 materials:
     coal: 8
     iron_ingot: 10

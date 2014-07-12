@@ -55,6 +55,23 @@ public class EffectListener implements Listener {
                     w.strikeLightning(new Location(w, x - 1, y, z - 3));
 
                     this.updateUsage(player, 1);
+                    return;
+                }
+            }
+        }
+        if (player.getItemInHand().getType() == Material.COMPASS && event.hasBlock()) {
+            if (plugin.playerEffects.get(player) != null) {
+                if (plugin.playerEffects.get(player).equalsIgnoreCase("bedteleport")) {
+                    Location bedLoc = event.getPlayer().getBedSpawnLocation();
+                    if(bedLoc != null) {
+                        event.getPlayer().teleport(bedLoc);
+                        player.sendMessage(ChatColor.GOLD + "Teleported to bed");
+                        this.updateUsage(player, 1);
+                        return;
+                    } else {
+                        player.sendMessage(ChatColor.RED + "You don't have a bed.");
+                        return;
+                    }
                 }
             }
         }

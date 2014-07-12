@@ -23,6 +23,15 @@ public class EffectCommand implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
+        if(args[0].equalsIgnoreCase("check")) {
+            if(plugin.playerEffects.containsKey(player) && plugin.playerEffects.get(player) != null) {
+                player.sendMessage(ChatColor.AQUA + "You currently have " + ChatColor.RED + plugin.playerEffects.get(player) + ChatColor.AQUA + " enabled with " + ChatColor.RED + plugin.usageLeft.get(player) + ChatColor.AQUA + " uses left");
+                return true;
+            } else {
+                player.sendMessage(ChatColor.AQUA + "You have no active effects");
+                return true;
+            }
+        }
         if (args.length < 2) {
             sender.sendMessage(ChatColor.GOLD + "Usage: /" + label + " <effect|remove> <info|on> [amount/time]");
             sender.sendMessage(ChatColor.AQUA + "Please note that any unused effects are removed on disconnect");
@@ -40,6 +49,10 @@ public class EffectCommand implements CommandExecutor {
                 case "lightning":
                     amount = 1;
                     message = "Right click with a stick to summon lightning. Use at own risk.";
+                    break;
+                case "bedteleport":
+                    amount = 1;
+                    message = "Right click a block with a compass in hand to teleport to your bed.";
                     break;
                 default:
                     player.sendMessage(ChatColor.AQUA + "There was an error");
@@ -65,7 +78,10 @@ public class EffectCommand implements CommandExecutor {
                     m = "Turns stone to gold. Cost: " + ChatColor.WHITE + plugin.enabledEffects.get(args[0]);
                     break;
                 case "lightning":
-                    m = "Makes you look like Thor. Possibly dangerous.";
+                    m = "Makes you look like Thor. Possibly dangerous. Cost: " + ChatColor.WHITE + plugin.enabledEffects.get(args[0]);
+                    break;
+                case "bedteleport":
+                    m = "Teleports you to bed using a compass. Cost: " + ChatColor.WHITE + plugin.enabledEffects.get(args[0]);
                     break;
                 default:
                     m = "Info not available.";
