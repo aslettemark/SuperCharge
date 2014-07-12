@@ -53,7 +53,33 @@ public class EffectListener implements Listener {
                     w.strikeLightning(new Location(w, x, y, z - 3));
                     w.strikeLightning(new Location(w, x + 1, y, z - 3));
                     w.strikeLightning(new Location(w, x - 1, y, z - 3));
+                    
+                    this.updateUsage(player, 1);
+                    return;
+                }
+            }
+        }
+        if (player.getItemInHand().getType() == Material.STICK) {
+            if (plugin.playerEffects.get(player) != null) {
+                if (plugin.playerEffects.get(player).equalsIgnoreCase("lightshow")) {
+                    int x = event.getPlayer().getLocation().getBlockX();
+                    int y = event.getPlayer().getLocation().getBlockY();
+                    int z = event.getPlayer().getLocation().getBlockZ();
+                    World w = player.getWorld();
 
+                    w.strikeLightningEffect(new Location(w, x + 3, y, z));
+                    w.strikeLightningEffect(new Location(w, x + 3, y, z + 1));
+                    w.strikeLightningEffect(new Location(w, x + 3, y, z - 1));
+                    w.strikeLightningEffect(new Location(w, x - 3, y, z));
+                    w.strikeLightningEffect(new Location(w, x - 3, y, z + 1));
+                    w.strikeLightningEffect(new Location(w, x - 3, y, z - 1));
+                    w.strikeLightningEffect(new Location(w, x, y, z + 3));
+                    w.strikeLightningEffect(new Location(w, x + 1, y, z + 3));
+                    w.strikeLightningEffect(new Location(w, x - 1, y, z + 3));
+                    w.strikeLightningEffect(new Location(w, x, y, z - 3));
+                    w.strikeLightningEffect(new Location(w, x + 1, y, z - 3));
+                    w.strikeLightningEffect(new Location(w, x - 1, y, z - 3));
+                    
                     this.updateUsage(player, 1);
                     return;
                 }

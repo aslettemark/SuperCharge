@@ -54,6 +54,10 @@ public class EffectCommand implements CommandExecutor {
                     amount = 1;
                     message = "Right click a block with a compass in hand to teleport to your bed.";
                     break;
+                case "lightshow":
+                    amount = 1;
+                    message = "Similar to lightning, but non-deadly.";
+                    break;
                 default:
                     player.sendMessage(ChatColor.AQUA + "There was an error");
                     break;
@@ -82,6 +86,9 @@ public class EffectCommand implements CommandExecutor {
                     break;
                 case "bedteleport":
                     m = "Teleports you to bed using a compass. Cost: " + ChatColor.WHITE + plugin.enabledEffects.get(args[0]);
+                    break;
+                case "lightshow":
+                    m = "Similar to lightning, but non-deadly. Cost: " + ChatColor.WHITE + plugin.enabledEffects.get(args[0]);
                     break;
                 default:
                     m = "Info not available.";
