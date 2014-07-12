@@ -7,7 +7,7 @@ cost:
     alchemy: 1000
     lightning: 50
     bedteleport: 200
-    lightshow: 30
+    lightshow: 10
 materials:
     coal: 8
     iron_ingot: 10
