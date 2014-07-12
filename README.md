@@ -35,7 +35,9 @@ With this newly acquired energy you can buy certain special effects. These effec
 Buy effects by typing /effect <name of effect> <on or buy> [amount, default=1], ex. /effect alchemy buy 2.
 Effects are reset on disconnect, however energy points are not. You may discard(and trash) any active effects by either
 a) Typing /effect remove
-b) Overriding the effect by buying a new one
+b) Overriding the effect by buying a new one. 
+
+Check the config file to see what items give energy, and how much.
 
 <!-- Hi, aslettemark! This is the default README for every ten.java submission. -->
 <!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
