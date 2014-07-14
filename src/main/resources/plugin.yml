@@ -1,5 +1,5 @@
-name: aslettemark-t2
-main: com.tenjava.entries.aslettemark.t2.TenJava
+name: SuperCharge
+main: net.aslettemark.tenjava.supercharge.SuperCharge
 version: '${project.version}'
 permissions:
     supercharge.drop:

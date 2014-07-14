@@ -1,18 +1,17 @@
-package com.tenjava.entries.aslettemark.t2.event;
+package net.aslettemark.tenjava.supercharge.event;
 
+import net.aslettemark.tenjava.supercharge.SuperCharge;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import com.tenjava.entries.aslettemark.t2.TenJava;
-
 public class JoinQuitListener implements Listener {
 
-    private TenJava plugin;
+    private SuperCharge plugin;
 
-    public JoinQuitListener(TenJava tj) {
+    public JoinQuitListener(SuperCharge tj) {
         this.plugin = tj;
     }
 

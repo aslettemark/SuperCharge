@@ -1,16 +1,15 @@
-package com.tenjava.entries.aslettemark.t2.event;
+package net.aslettemark.tenjava.supercharge.event;
 
+import net.aslettemark.tenjava.supercharge.SuperCharge;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-import com.tenjava.entries.aslettemark.t2.TenJava;
-
 public class DropListener implements Listener {
 
-    private TenJava plugin;
+    private SuperCharge plugin;
 
-    public DropListener(TenJava tj) {
+    public DropListener(SuperCharge tj) {
         this.plugin = tj;
     }
 

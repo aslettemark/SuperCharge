@@ -1,17 +1,16 @@
-package com.tenjava.entries.aslettemark.t2.command;
+package net.aslettemark.tenjava.supercharge.command;
 
+import net.aslettemark.tenjava.supercharge.SuperCharge;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import com.tenjava.entries.aslettemark.t2.TenJava;
-
 public class ListEffectsCommand implements CommandExecutor {
 
-    private TenJava plugin;
+    private SuperCharge plugin;
 
-    public ListEffectsCommand(TenJava tj) {
+    public ListEffectsCommand(SuperCharge tj) {
         this.plugin = tj;
     }
 

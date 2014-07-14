@@ -1,5 +1,6 @@
-package com.tenjava.entries.aslettemark.t2.event;
+package net.aslettemark.tenjava.supercharge.event;
 
+import net.aslettemark.tenjava.supercharge.SuperCharge;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -9,13 +10,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import com.tenjava.entries.aslettemark.t2.TenJava;
-
 public class EffectListener implements Listener {
 
-    private TenJava plugin;
+    private SuperCharge plugin;
 
-    public EffectListener(TenJava tj) {
+    public EffectListener(SuperCharge tj) {
         this.plugin = tj;
     }
 

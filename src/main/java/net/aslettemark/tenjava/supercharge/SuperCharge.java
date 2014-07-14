@@ -1,4 +1,4 @@
-package com.tenjava.entries.aslettemark.t2;
+package net.aslettemark.tenjava.supercharge;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,14 +9,14 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.tenjava.entries.aslettemark.t2.command.DropCommand;
-import com.tenjava.entries.aslettemark.t2.command.EffectCommand;
-import com.tenjava.entries.aslettemark.t2.command.ListEffectsCommand;
-import com.tenjava.entries.aslettemark.t2.event.DropListener;
-import com.tenjava.entries.aslettemark.t2.event.EffectListener;
-import com.tenjava.entries.aslettemark.t2.event.JoinQuitListener;
+import net.aslettemark.tenjava.supercharge.command.DropCommand;
+import net.aslettemark.tenjava.supercharge.command.EffectCommand;
+import net.aslettemark.tenjava.supercharge.command.ListEffectsCommand;
+import net.aslettemark.tenjava.supercharge.event.DropListener;
+import net.aslettemark.tenjava.supercharge.event.EffectListener;
+import net.aslettemark.tenjava.supercharge.event.JoinQuitListener;
 
-public class TenJava extends JavaPlugin {
+public class SuperCharge extends JavaPlugin {
 
     public Logger log = this.getLogger();
     public HashMap<Material, Integer> materials = new HashMap<Material, Integer>(); //material, energy gained

@@ -1,18 +1,17 @@
-package com.tenjava.entries.aslettemark.t2.command;
+package net.aslettemark.tenjava.supercharge.command;
 
+import net.aslettemark.tenjava.supercharge.SuperCharge;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.tenjava.entries.aslettemark.t2.TenJava;
-
 public class DropCommand implements CommandExecutor {
 
-    private TenJava plugin;
+    private SuperCharge plugin;
 
-    public DropCommand(TenJava tj) {
+    public DropCommand(SuperCharge tj) {
         this.plugin = tj;
     }
 
