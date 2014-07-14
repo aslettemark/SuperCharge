@@ -32,7 +32,7 @@ Usage
 
 The plugin let's you gain and stock up on divine energy, by sacrificing(dropping) valuable items. To be in sacrifice mode type /drop.
 With this newly acquired energy you can buy certain special effects. These effects include cool visuals, alchemy and other... things!
-Buy effects by typing /effect <name of effect> <on or buy> [amount, default=1], ex. /effect alchemy buy 2.
+Buy effects by typing /effect [name of effect] [on or buy] [amount, default=1], ex. /effect alchemy buy 2.
 Effects are reset on disconnect, however energy points are not. You may discard(and trash) any active effects by either<br/>
 a) Typing /effect remove.<br/>
 b) Overriding the effect by buying a new one. <br/>
